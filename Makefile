@@ -1,14 +1,17 @@
-sources:= parsetree.cc token.cc tree.cc
-objects:= $(patsubst %.cc, %.o, $(sources))
+.PHONY: all clean
 
 all: bf2c
 
-bf2c:
-	$(CXX) $(CXXFLAGS) -c parsetree.cc -o parsetree.o
-	$(CXX) $(CXXFLAGS) -c token.cc -o token.o
-	$(CXX) $(CXXFLAGS) -c tree.cc -o tree.o
-	$(CXX) $(CXXFLAGS) bf2c.cc -o $@ $(objects)
+hdr = parsetree.h
+obj = bf2c.o parsetree.o token.o tree.o
+
+parsetree.o: parsetree.h
+token.o: token.h
+tree.o: tree.h
+bf2c.o: $(hdr)
+
+bf2c: $(obj)
+	$(CXX) -o $@ $(obj)
 
 clean:
-	rm -f $(objects)
-	rm -f bf2c
+	rm bf2c $(obj)
