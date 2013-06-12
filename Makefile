@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-all: bf2c
+all: bf2c gen_bf
 
 hdr = parsetree.h
 obj = bf2c.o parsetree.o token.o tree.o
@@ -15,3 +15,4 @@ bf2c: $(obj)
 
 clean:
 	rm bf2c $(obj)
+	rm gen_bf gen_bf.o
