@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all clean install
 
 all: bf2c gen_bf
 
@@ -14,5 +14,7 @@ bf2c: $(obj)
 	$(CXX) -o $@ $(obj)
 
 clean:
-	rm bf2c $(obj)
-	rm gen_bf gen_bf.o
+	rm bf2c gen_bf $(obj)
+
+install:
+	install bf2c gen_bf $(PREFIX)/bin
