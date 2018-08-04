@@ -4,11 +4,17 @@ The Language
 BrainFuck is a minimalistic but Turing complete programming language devised by Urban Mueller. It is oriented around a tape, a read/write head, an input device and an output device. There are 8 instructions available:
 
 Character	Name	Action
-+ -		val	increase/decrease the value of the tape cell pointed to by the head
+
+\+ -		val	increase/decrease the value of the tape cell pointed to by the head
+
 \> <		ptr	move the head 1 position to the right respectively left
+
 \[		do	loop while the contents of the tape cell is nonzero
+
 ]		od	close a loop
+
 ,		get	read a value from the input device and write the ASCII code of that value to the current tape cell
+
 .		put	output the value from the current tape cell as an ASCII character to the output device
 
 Any other character represents a comment.
