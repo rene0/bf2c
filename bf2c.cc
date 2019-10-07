@@ -29,8 +29,8 @@ SUCH DAMAGE.
 #include <limits.h>
 #include <unistd.h>
 
-#define VERSION "1.2.5"
-#define ENDYEAR "2012"
+#define VERSION "1.3.1"
+#define ENDYEAR "2013"
 
 // defined in sysexits.h :
 #define EX_OK 0
